@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 TAGS=".tags"
 DEPLOYMENT="prod/mindbox-task-prod.yaml"
