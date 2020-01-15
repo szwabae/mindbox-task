@@ -17,7 +17,6 @@ steps:
       - ./gradlew test
   - name: push image
     image: plugins/docker
-    environment:
     settings:
       username: szwabaewa
       password:
