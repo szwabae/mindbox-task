@@ -1,7 +1,8 @@
 #!bin/sh
 
 TAGS=".tags"
-DEPLOYMENT="prod/mindbox-task-prod.yaml"
+DEPLOYMENT="stg/mindbox-task-stg.yaml"
+ENV=stg
 
 if ![ -f $TAGS ]; then
 	echo "$TAGS not found."
@@ -22,7 +23,7 @@ if ![ -f $DEPLOYMENT ]; then
 	exit 1;
 fi
 
-sed -i "s|\(image: szwabaewa/mindbox-task\):.*$|\1:$TAG|" $DEPLOYMENT
+sed -i "s|\(image: szwabaewa/mindbox-task\):.*$|\1:$TAG-$ENV|" $DEPLOYMENT
 
 git add $DEPLOYMENT
 git commit -m "[DRONE.io] k8s update deployment"
