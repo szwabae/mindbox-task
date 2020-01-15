@@ -2,14 +2,12 @@ package com.mindbox.task.controller;
 
 import com.mindbox.task.controller.service.ProjectService;
 import com.mindbox.task.models.Project;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Slf4j
 @Controller
 @RequestMapping("/landscape")
 public class CncfLandscapeController {
