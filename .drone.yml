@@ -10,7 +10,7 @@ steps:
     image: adoptopenjdk/openjdk11:latest
     commands:
       - ./gradlew clean build
-      - echo ${DRONE_COMMIT_SHA:0:8} > .tags
+      - echo ${DRONE_COMMIT_SHA:0:8}-${DRONE_BRANCH} > .tags
   - name: test
     image: adoptopenjdk/openjdk11:latest
     commands:
