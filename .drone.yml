@@ -18,11 +18,10 @@ steps:
   - name: push image
     image: plugins/docker
     environment:
-      DOCKERHUB_API_KEY:
-        from_secret: DOCKERHUB_TOKEN
     settings:
       username: szwabaewa
-      password: ${DOCKERHUB_API_KEY}
+      password:
+        from_secret: DOCKERHUB_TOKEN
       repo: szwabaewa/mindbox-task
   - name: update k8s deployment
     image: alpine
