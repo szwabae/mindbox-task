@@ -17,7 +17,7 @@ git clone https://github.com/szwabae/mindbox-k8s.git
 
 cd mindbox-k8s
 
-if ![ -f $DEPLOYMENT ]; then
+if ! [ -f $DEPLOYMENT ]; then
 	echo "$DEPLOYMENT not found."
 	exit 1;
 fi
