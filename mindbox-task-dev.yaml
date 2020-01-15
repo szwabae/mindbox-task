@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mindbox-task
-          image: szwabaewa/mindbox-task:5678d57a
+          image: szwabaewa/mindbox-task:63837875
           imagePullPolicy: IfNotPresent
           resources:
             requests:
