@@ -1,0 +1,33 @@
+kind: pipeline
+name: default
+
+workspace:
+  base: /java
+  path: src/github.com/szwabae/mindbox-task
+
+steps:
+  - name: clean & build
+    image: adoptopenjdk/openjdk11:latest
+    commands:
+      - ./gradlew clean build
+      - echo ${DRONE_COMMIT_SHA:0:8} > .tags
+  - name: test
+    image: adoptopenjdk/openjdk11:latest
+    commands:
+      - ./gradlew test
+  - name: push image
+    image: plugins/docker
+    environment:
+      DOCKERHUB_API_KEY:
+        from_secret: DOCKERHUB_TOKEN
+    settings:
+      username: szwabaewa
+      password: ${DOCKERHUB_API_KEY}
+      repo: szwabaewa/mindbox-task
+  - name: update k8s deployment
+    image: alpine
+    environment:
+      GITHUB_API_KEY:
+        from_secret: GITHUB_TOKEN
+    commands:
+      - sh scripts/update-manifest.sh

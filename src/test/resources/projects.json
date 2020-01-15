@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Airship",
+    "twitter": "https://twitter.com/airshipproject",
+    "crunchbase": "https://www.crunchbase.com/organization/openstack",
+    "commitsThisYear": 401,
+    "contributorsCount": 34,
+    "contributorsLink": "https://github.com/airshipit/treasuremap/graphs/contributors",
+    "language": "Shell",
+    "stars": 23,
+    "license": "Apache License 2.0",
+    "headquarters": "Austin, Texas",
+    "description": "Reference Airship manifests, CICD, and reference architecture.",
+    "organization": "OpenStack",
+    "path": "Provisioning / Automation & Configuration",
+    "landscape": "Provisioning / Automation & Configuration",
+    "category": "Provisioning",
+    "oss": true,
+    "homepage_url": "https://www.airshipit.org/",
+    "repo_url": "https://github.com/airshipit/treasuremap"
+  },
+  {
+    "name": "Ansible",
+    "twitter": "https://twitter.com/ansible",
+    "crunchbase": "https://www.crunchbase.com/organization/red-hat",
+    "commitsThisYear": 6824,
+    "contributorsCount": 4846,
+    "contributorsLink": "https://github.com/ansible/ansible/graphs/contributors",
+    "language": "Python",
+    "stars": 41282,
+    "license": "GNU General Public License v3.0",
+    "headquarters": "Raleigh, North Carolina",
+    "description": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications — automate in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com/ansible/",
+    "organization": "Red Hat",
+    "path": "Provisioning / Automation & Configuration",
+    "landscape": "Provisioning / Automation & Configuration",
+    "category": "Provisioning",
+    "oss": true,
+    "homepage_url": "https://www.ansible.com/",
+    "repo_url": "https://github.com/ansible/ansible"
+  }
+]

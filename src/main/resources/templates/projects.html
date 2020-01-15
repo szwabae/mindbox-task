@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Landscape projects</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body th:style="'font-size: 11px; font-family: Arial'">
+        <h1 th:if="${projects.empty}">No Landscape projects found</h1>
+        <table th:border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Homepage</th>
+                    <th>Repo</th>
+                    <th>Twitter</th>
+                    <th>Crunchbase</th>
+                    <th>Crunchbase details</th>
+                    <th>Contributors link</th>
+                    <th>Stars</th>
+                    <th>Landscape</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="project : ${projects}">
+                    <td><span th:text="${project.name}"></span></td>
+                    <td><a th:href="@{|${project.homepageUrl}|}" th:text="${project.homepageUrl}"></a></td>
+                    <td><a th:href="@{|${project.repoUrl}|}" th:text="${project.repoUrl}"></a></td>
+                    <td><a th:href="@{|${project.twitter}|}" th:text="${project.twitter}"></a></td>
+                    <td><a th:href="@{|${project.crunchbase}|}" th:text="${project.crunchbase}"></a></td>
+                    <td>
+                        <ul>
+                            <li>Country: <span th:text="${project.crunchbaseData.country}"></span></li>
+                            <li>City: <span th:text="${project.crunchbaseData.city}"></span></li>
+                            <li>LinkedIn: <a th:href="@{|${project.crunchbaseData.linkedin}|}"
+                                             th:text="${project.crunchbaseData.linkedin}"></a></li>
+                        </ul>
+                    </td>
+                    <td><a th:href="@{|${project.contributorsLink}|}" th:text="${project.contributorsLink}"></a></td>
+                    <td><span th:text="${project.stars}"></span></td>
+                    <td><span th:text="${project.landscape}"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

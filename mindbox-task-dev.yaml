@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mindbox-task
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mindbox-task
+  template:
+    metadata:
+      labels:
+        app: mindbox-task
+    spec:
+      containers:
+        - name: mindbox-task
+          image: szwabaewa/mindbox-task:2e88876f
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
+            - name: CACHE_TTL
+              value: 900000 # cache TTL set to 15 minutes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mindbox-task
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: mindbox-task
