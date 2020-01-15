@@ -2,7 +2,7 @@
 
 TAGS=".tags"
 DEPLOYMENT="stg/mindbox-task-stg.yaml"
-ENV=stg
+ENV="stg"
 
 if ![ -f $TAGS ]; then
 	echo "$TAGS not found."
