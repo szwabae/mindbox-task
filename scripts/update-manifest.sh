@@ -1,7 +1,7 @@
 #!bin/sh
 
 TAGS=".tags"
-DEPLOYMENT="prod/mindbox-task-prod.yaml"
+DEPLOYMENT="dev/mindbox-task-dev.yaml"
 
 if ![ -f $TAGS ]; then
 	echo "$TAGS not found."
