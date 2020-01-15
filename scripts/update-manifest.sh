@@ -3,7 +3,7 @@
 TAGS=".tags"
 DEPLOYMENT="prod/mindbox-task-prod.yaml"
 
-if ![ -f $TAGS ]; then
+if ! [ -f $TAGS ]; then
 	echo "$TAGS not found."
 	exit 1;
 fi
