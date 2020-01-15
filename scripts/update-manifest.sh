@@ -1,9 +1,9 @@
-#!bin/sh
+#!/bin/sh
 
 TAGS=".tags"
 DEPLOYMENT="stg/mindbox-task-stg.yaml"
 
-if ![ -f $TAGS ]; then
+if ! [ -f $TAGS ]; then
 	echo "$TAGS not found."
 	exit 1;
 fi
