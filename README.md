@@ -1,6 +1,6 @@
 ## CNCF Landscape data viewer
 
-This project was created as solution for Mindbox recruiting task.
+This project was created as a solution for Mindbox recruiting task.
 Assumptions:
 * getting and caching data from CNCF Landscape and presenting the result in json, yaml and html formats,
 * storing configuration in k8s,
