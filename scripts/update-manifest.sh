@@ -26,6 +26,6 @@ sed -i "s|\(image: szwabaewa/mindbox-task\):.*$|\1:$TAG|" $DEPLOYMENT
 
 git add $DEPLOYMENT
 git commit -m "[DRONE.io] k8s update deployment"
-git remote add origin https://szwabae:${GITHUB_API_KEY}@github.com/szwabae/mindbox-k8s
-git fetch origin
-git push origin master
+# git remote add origin https://szwabae:${GITHUB_API_KEY}@github.com/szwabae/mindbox-k8s
+# git fetch origin
+git push
